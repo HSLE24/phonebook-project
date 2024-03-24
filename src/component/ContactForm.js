@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useState } from 'react'
-import { UseDispatch, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const ContactForm = () => {
 
@@ -11,7 +11,7 @@ const ContactForm = () => {
 
     const addContact=(event)=>{
         event.preventDefault();
-        dispatch({type:'ADD_CONTACT' , payload: {name, phoneNumber}})
+        dispatch({type:'ADD_CONTACT' , payload: {name, phoneNumber, id: Math.random().toString(36).substr(2, 16)}})
     }
     
     const oninputPhone=(event)=>{
